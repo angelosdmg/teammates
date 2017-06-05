@@ -1,6 +1,7 @@
 <%@ tag description="adminHome.jsp - Admin home create instructor account single line form" %>
 <%@ tag import="teammates.common.util.Const" %>
 <%@ attribute name="instructorDetailsSingleLine" required="true" %>
+<% String csvString = (String)request.getAttribute("CsvToString"); %>
 
 <div class="well well-plain">
     <div>
@@ -9,7 +10,7 @@
             <span class="glyphicon glyphicon-exclamation-sign glyphicon-primary"></span> Add Instructor Details in the format: Name | Email | Institution
         </div>
         <br>
-        <textarea class="form-control addInstructorFormControl" rows="5" type="text" id="addInstructorDetailsSingleLine">${instructorDetailsSingleLine}</textarea>
+        <textarea class="form-control addInstructorFormControl" rows="5" type="text" placeholder="<%= csvString %>" id="addInstructorDetailsSingleLine">${instructorDetailsSingleLine}</textarea>
     </div>
     <br>
     
