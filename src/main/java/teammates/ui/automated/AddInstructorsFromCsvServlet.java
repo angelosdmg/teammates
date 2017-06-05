@@ -42,7 +42,7 @@ public class AddInstructorsFromCsvServlet extends HttpServlet {
                     StringWriter writer = new StringWriter();
                     IOUtils.copy(fileContent, writer);
                     String csvInString = writer.toString();
-                    
+                    csvInString.replaceAll(";", "|");
                     req.setAttribute("CsvToString", csvInString);
                     req.getRequestDispatcher(Const.ViewURIs.ADMIN_HOME).forward(req, resp);
                 }
